@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "参加活动",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

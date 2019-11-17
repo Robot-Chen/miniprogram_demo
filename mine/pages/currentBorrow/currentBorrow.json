@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "当前借阅",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

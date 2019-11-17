@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "在线办卡",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

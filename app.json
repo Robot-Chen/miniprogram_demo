@@ -1,0 +1,182 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/class/class",
+        "pages/bookshelf/bookshelf",
+        "pages/mine/mine",
+        "pages/webView/webView",
+        "home/pages/search/search",
+        "home/pages/slider/slider",
+        "home/pages/bookList/bookList",
+        "home/pages/bookInfo/bookInfo",
+        "home/pages/bookListDetail/bookListDetail",
+        "home/pages/transit/transit",
+        "home/pages/scan/scan",
+        "home/pages/scanborrow/scanborrow",
+        "home/pages/activity/tellsHome/tellsHome",
+        "home/pages/activity/tellsUpload/tellsUpload",
+        "home/pages/activity/tellsWorks/tellsWorks",
+        "home/pages/activity/myWorks/myWorks",
+        "home/pages/activity/tellsDetail/tellsDetail",
+        "home/pages/nightbeat/photoHome/photoHome",
+        "home/pages/nightbeat/photoList/photoList",
+        "home/pages/nightbeat/photoWork/photoWork",
+        "home/pages/borrowbook/borrowbook",
+        "class/pages/editclass/editclass",
+        "class/pages/books/books",
+        "class/pages/recommendbook/recommendbook",
+        "bookshelf/pages/settlement/settlement",
+        "bookshelf/pages/settlementSuccess/settlementSuccess",
+        "bookshelf/pages/success/success",
+        "bookshelf/pages/webviewPay/webviewPay",
+        "mine/pages/message/message",
+        "mine/pages/eCard/eCard",
+        "mine/pages/currentPackage/currentPackage",
+        "mine/pages/myHisPackage/myHisPackage",
+        "mine/pages/currentBorrow/currentBorrow",
+        "mine/pages/borrowHistory/borrowHistory",
+        "mine/pages/myOrder/myOrder",
+        "mine/pages/logistics/logistics",
+        "mine/pages/myInfo/mobile/mobile",
+        "mine/pages/myInfo/address/address",
+        "mine/pages/myInfo/address/addAddress/addAddress",
+        "mine/pages/myInfo/address/updateAddress/updateAddress",
+        "mine/pages/myInfo/wjAddress/wjAddress",
+        "mine/pages/myInfo/wjAddress/ziTiAddress/ziTiAddress",
+        "mine/pages/myInfo/wjAddress/updateAddress/updateAddress",
+        "mine/pages/myInfo/readerCard/readerCard",
+        "mine/pages/myInfo/readerCard/bindForm/bindForm",
+        "mine/pages/myInfo/readerCard/onlineCard/onlineCard",
+        "mine/pages/myInfo/arrearage/arrearage",
+        "mine/pages/myInfo/setting/setting",
+        "mine/pages/myCoupon/myCoupon",
+        "mine/pages/returnBook/returnBook",
+        "mine/pages/returnBookNew/returnBookNew",
+        "mine/pages/returnBookNew/emsreturnbook/emsreturnbook",
+        "mine/pages/returnBookNew/createOrder/createOrder",
+        "mine/pages/returnBookNew/resvSuccess/resvSuccess",
+        "mine/pages/returnBookNew/returnHistory/returnHistory",
+        "mine/pages/returnBookNew/resvOrderInfo/resvOrderInfo",
+        "mine/pages/recommendList/recommendList"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "嘉图借书",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#ACB5BB",
+        "selectedColor": "#009EFF",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "首页",
+                "iconPath": "assets/images/icon/index.png",
+                "selectedIconPath": "assets/images/icon/index_click.png"
+            },
+            {
+                "pagePath": "pages/class/class",
+                "text": "分类",
+                "iconPath": "assets/images/icon/class.png",
+                "selectedIconPath": "assets/images/icon/class_click.png"
+            },
+            {
+                "pagePath": "pages/bookshelf/bookshelf",
+                "text": "借书架",
+                "iconPath": "assets/images/icon/bookshelf.png",
+                "selectedIconPath": "assets/images/icon/bookshelf_click.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "assets/images/icon/me.png",
+                "selectedIconPath": "assets/images/icon/me_click.png"
+            }
+        ]
+    },
+    "subPackages": [
+        {
+            "root": "home/",
+            "name": "home",
+            "pages": [
+                "home/pages/search/search",
+                "home/pages/slider/slider",
+                "home/pages/bookList/bookList",
+                "home/pages/bookInfo/bookInfo",
+                "home/pages/bookListDetail/bookListDetail",
+                "home/pages/transit/transit",
+                "home/pages/scan/scan",
+                "home/pages/scanborrow/scanborrow",
+                "home/pages/activity/tellsHome/tellsHome",
+                "home/pages/activity/tellsUpload/tellsUpload",
+                "home/pages/activity/tellsWorks/tellsWorks",
+                "home/pages/activity/myWorks/myWorks",
+                "home/pages/activity/tellsDetail/tellsDetail",
+                "home/pages/nightbeat/photoHome/photoHome",
+                "home/pages/nightbeat/photoList/photoList",
+                "home/pages/nightbeat/photoWork/photoWork",
+                "home/pages/borrowbook/borrowbook"
+            ]
+        },
+        {
+            "root": "class/",
+            "name": "class",
+            "pages": [
+                "class/pages/editclass/editclass",
+                "class/pages/books/books",
+                "class/pages/recommendbook/recommendbook"
+            ]
+        },
+        {
+            "root": "bookshelf/",
+            "name": "bookshelf",
+            "pages": [
+                "bookshelf/pages/settlement/settlement",
+                "bookshelf/pages/settlementSuccess/settlementSuccess",
+                "bookshelf/pages/success/success",
+                "bookshelf/pages/webviewPay/webviewPay"
+            ]
+        },
+        {
+            "root": "mine/",
+            "name": "mine",
+            "pages": [
+                "mine/pages/message/message",
+                "mine/pages/eCard/eCard",
+                "mine/pages/currentPackage/currentPackage",
+                "mine/pages/myHisPackage/myHisPackage",
+                "mine/pages/currentBorrow/currentBorrow",
+                "mine/pages/borrowHistory/borrowHistory",
+                "mine/pages/myOrder/myOrder",
+                "mine/pages/logistics/logistics",
+                "mine/pages/myInfo/mobile/mobile",
+                "mine/pages/myInfo/address/address",
+                "mine/pages/myInfo/address/addAddress/addAddress",
+                "mine/pages/myInfo/address/updateAddress/updateAddress",
+                "mine/pages/myInfo/wjAddress/wjAddress",
+                "mine/pages/myInfo/wjAddress/ziTiAddress/ziTiAddress",
+                "mine/pages/myInfo/wjAddress/updateAddress/updateAddress",
+                "mine/pages/myInfo/readerCard/readerCard",
+                "mine/pages/myInfo/readerCard/bindForm/bindForm",
+                "mine/pages/myInfo/readerCard/onlineCard/onlineCard",
+                "mine/pages/myInfo/arrearage/arrearage",
+                "mine/pages/myInfo/setting/setting",
+                "mine/pages/myCoupon/myCoupon",
+                "mine/pages/returnBook/returnBook",
+                "mine/pages/returnBookNew/returnBookNew",
+                "mine/pages/returnBookNew/emsreturnbook/emsreturnbook",
+                "mine/pages/returnBookNew/createOrder/createOrder",
+                "mine/pages/returnBookNew/resvSuccess/resvSuccess",
+                "mine/pages/returnBookNew/returnHistory/returnHistory",
+                "mine/pages/returnBookNew/resvOrderInfo/resvOrderInfo",
+                "mine/pages/recommendList/recommendList"
+            ]
+        }
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wx7727e5866f92133c"
+    ]
+}

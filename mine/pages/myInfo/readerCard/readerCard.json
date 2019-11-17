@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "读者证管理",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

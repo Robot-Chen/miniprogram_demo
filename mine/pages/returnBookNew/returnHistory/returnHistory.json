@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "预约历史",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

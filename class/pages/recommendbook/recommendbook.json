@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我要荐书",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

@@ -1,0 +1,6 @@
+var Crypto = exports.Crypto = require("./lib/Crypto.js").Crypto;
+
+[ "MD5", "SHA256" ].forEach(function(path) {
+    require("./lib/" + path);
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNyeXB0b2pzLmpzIl0sIm5hbWVzIjpbIkNyeXB0byIsImV4cG9ydHMiLCJyZXF1aXJlIiwiZm9yRWFjaCIsInBhdGgiXSwibWFwcGluZ3MiOiI7O0FBQUEsSUFBSUEsU0FBU0MsUUFBUUQsTUFBUixHQUFpQkUsUUFBUSxjQUFSLEVBQXdCRixNQUF0RDs7QUFFQSxDQUFFLEtBQUYsRUFDRSxRQURGLEVBRUVHLE9BRkYsQ0FFVyxVQUFVQyxJQUFWLEVBQWdCO0FBQzFCRixTQUFRLFdBQVdFLElBQW5CO0FBQ0EsQ0FKRCIsImZpbGUiOiJjcnlwdG9qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbInZhciBDcnlwdG8gPSBleHBvcnRzLkNyeXB0byA9IHJlcXVpcmUoJy4vbGliL0NyeXB0bycpLkNyeXB0bztcblxuWyAnTUQ1J1xuLCAnU0hBMjU2J1xuXS5mb3JFYWNoKCBmdW5jdGlvbiAocGF0aCkge1xuXHRyZXF1aXJlKCcuL2xpYi8nICsgcGF0aCk7XG59KTtcbiJdfQ==

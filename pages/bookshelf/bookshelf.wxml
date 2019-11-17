@@ -1,0 +1,79 @@
+<view wx:if="{{login&&bindCard}}">
+    <checkbox-group bindchange="hendleChange">
+        <block wx:if="{{item.libcode==libcode}}" wx:for="{{items}}" wx:key="{{index}}">
+            <view class="lib_box space-between" wx:if="{{item.isfirstBook}}">
+                <view>{{item.extra1}}</view>
+                <view bindtap="canEdit">{{operation}}</view>
+            </view>
+            <view class="book_main_box start">
+                <view>
+                    <checkbox checked="{{item.checkValue&&(item.available>0&&operation=='编辑'||operation!='编辑')}}" color="#009EFF" disabled="{{item.available==0&&operation=='编辑'?true:false}}" value="{{item.id}}"></checkbox>
+                </view>
+                <view class="cover_box">
+                    <image src="{{item.bookjpgs}}"></image>
+                </view>
+                <view class="info_box">
+                    <view class="title">{{item.title}}</view>
+                    <view>作者：{{item.author}}</view>
+                    <view>出版社：{{item.publisher}}</view>
+                    <view>出版时间：{{item.pubdate}}</view>
+                    <view>ISBN：{{item.isbn}}</view>
+                    <view style="color:rgb(238, 91, 91);" wx:if="{{item.available==0}}">暂无可借本书</view>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{item.libcode!=libcode}}" wx:for="{{items}}" wx:key="{{index}}">
+            <view class="lib_box space-between" wx:if="{{item.isfirstBook}}">
+                <view>{{item.extra1}}</view>
+                <view bindtap="canEdit">{{operation}}</view>
+            </view>
+            <view class="book_main_box start">
+                <view>
+                    <checkbox checked="{{item.checkValue&&(item.available>0&&operation=='编辑'||operation!='编辑')}}" color="#009EFF" disabled="{{item.available==0&&operation=='编辑'?true:false}}" value="{{item.id}}"></checkbox>
+                </view>
+                <view class="cover_box">
+                    <image src="{{item.bookjpgs}}"></image>
+                </view>
+                <view class="info_box">
+                    <view class="title">{{item.title}}</view>
+                    <view>作者：{{item.author}}</view>
+                    <view>出版社：{{item.publisher}}</view>
+                    <view>出版时间：{{item.pubdate}}</view>
+                    <view>ISBN：{{item.isbn}}</view>
+                    <view style="color:rgb(238, 91, 91);" wx:if="{{item.available==0}}">暂无可借本书</view>
+                </view>
+            </view>
+        </block>
+    </checkbox-group>
+    <view class="bottom_box space-between" wx:if="{{items&&items.length!=0}}">
+        <view class="check_All start">
+            <checkbox bindtap="allCheck" checked="{{allCheckValue}}" color="#009EFF" data-wpyallcheck-a="borrow" disabled="{{bookCount==disCount&&operation=='编辑'}}" wx:if="{{operation=='编辑'}}"></checkbox>
+            <checkbox bindtap="allCheck" checked="{{allCheckValue}}" color="#009EFF" data-wpyallcheck-a="del" wx:else></checkbox>
+            <view class="check_text">
+                <text>全选</text>
+                <text>已选 {{chooseCount}} 本</text>
+            </view>
+        </view>
+        <view bindtap="deleteOrBorrow" class="btn center {{operation=='编辑'?'':'bgr'}}">{{operation=='编辑'?'借阅':'移出借书架'}}</view>
+    </view>
+</view>
+<view class="no-records-box center" wx:if="{{!items||items.length==0}}">
+    <image class="no-records-img" mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/empty9.png"></image>
+    <text class="no-text">还没有图书哦</text>
+    <button bindgetuserinfo="bindGetUserInfo" class="space-between" openType="getUserInfo" wx:if="{{canIUse&&!login}}">
+        <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic-book.png"></image>
+        <text>去授权</text>
+    </button>
+    <view bindtap="tapName" class="space-between" data-wpytapname-a="" wx:if="{{login&&!bindCard}}">
+        <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic-book.png"></image>
+        <text>去绑卡</text>
+    </view>
+</view>
+<view class="{{items&&items.length==0?'tf-msg empty-book':'tf-msg noempty-book'}}" wx:if="{{showTingMsg&&showTingMsg==1&&tfmsg&&tfmsg.length>=30}}">
+    <view class="move-msg">{{tfmsg}}</view>
+</view>
+<view class="{{items&&items.length==0?'tf-msg empty-book display-flex':'tf-msg noempty-book display-flex'}}" wx:if="{{showTingMsg&&showTingMsg==1&&tfmsg&&tfmsg.length<30}}">
+    <view>{{tfmsg}}</view>
+    <image bindtap="closeTingfuMsg" class="msg-image" data-wpyclosetingfumsg-a="" mode="aspectFit" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/chacha_124.png"></image>
+</view>
+<toast animationData="{{animationData}}" showtoastData="{{showtoastData}}"></toast>

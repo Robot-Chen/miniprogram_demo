@@ -1,0 +1,33 @@
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.getSelfLifting = getSelfLifting;
+
+exports.getFixedPointArea = getFixedPointArea;
+
+exports.getHomeDelivery = getHomeDelivery;
+
+function getSelfLifting() {
+    var map = [];
+    map.push("说明");
+    map.push("自提点：将免费送至用户指定的自提点，需要用户去该自提点领取。");
+    return map;
+}
+
+function getFixedPointArea() {
+    var map = [];
+    map.push("说明");
+    map.push("1. 定点小区：免费配送至小区信报箱；");
+    map.push("2. 首批试点投送小区：奥林清华（东、西）区、嘉鸿花园，鲈乡二村、鲈乡三村、吴越领秀、欧风华庭、明珠城望湖苑");
+    return map;
+}
+
+function getHomeDelivery() {
+    var map = [];
+    map.push("说明");
+    map.push("1. 送书上门：每5本书5元，不足5本按5本计算；");
+    map.push("2. 送书上门需付费之后才能送到用户指定的地址。若工作人员找到书后，该书还未付费，将被取消借阅。");
+    return map;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnN0YW50LmpzIl0sIm5hbWVzIjpbImdldFNlbGZMaWZ0aW5nIiwiZ2V0Rml4ZWRQb2ludEFyZWEiLCJnZXRIb21lRGVsaXZlcnkiLCJtYXAiLCJwdXNoIl0sIm1hcHBpbmdzIjoiOzs7OztRQUFnQkEsYyxHQUFBQSxjO1FBUUFDLGlCLEdBQUFBLGlCO1FBU0FDLGUsR0FBQUEsZTtBQWpCVCxTQUFTRixjQUFULEdBQXlCO0FBQzVCLFFBQUlHLE1BQU0sRUFBVjtBQUNBQSxRQUFJQyxJQUFKLENBQVMsSUFBVDtBQUNBRCxRQUFJQyxJQUFKLENBQVMsZ0NBQVQ7O0FBRUEsV0FBT0QsR0FBUDtBQUNIOztBQUVNLFNBQVNGLGlCQUFULEdBQTRCO0FBQy9CLFFBQUlFLE1BQU0sRUFBVjtBQUNBQSxRQUFJQyxJQUFKLENBQVMsSUFBVDtBQUNBRCxRQUFJQyxJQUFKLENBQVMscUJBQVQ7QUFDQUQsUUFBSUMsSUFBSixDQUFTLHdEQUFUOztBQUVBLFdBQU9ELEdBQVA7QUFDSDs7QUFFTSxTQUFTRCxlQUFULEdBQTBCO0FBQzdCLFFBQUlDLE1BQU0sRUFBVjtBQUNBQSxRQUFJQyxJQUFKLENBQVMsSUFBVDtBQUNBRCxRQUFJQyxJQUFKLENBQVMsMkJBQVQ7QUFDQUQsUUFBSUMsSUFBSixDQUFTLGtEQUFUOztBQUVBLFdBQU9ELEdBQVA7QUFDSCIsImZpbGUiOiJjb25zdGFudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBmdW5jdGlvbiBnZXRTZWxmTGlmdGluZygpe1xuICAgIHZhciBtYXAgPSBbXVxuICAgIG1hcC5wdXNoKCfor7TmmI4nKTtcbiAgICBtYXAucHVzaCgn6Ieq5o+Q54K577ya5bCG5YWN6LS56YCB6Iez55So5oi35oyH5a6a55qE6Ieq5o+Q54K577yM6ZyA6KaB55So5oi35Y676K+l6Ieq5o+Q54K56aKG5Y+W44CCJyk7XG5cbiAgICByZXR1cm4gbWFwOyBcbn1cblxuZXhwb3J0IGZ1bmN0aW9uIGdldEZpeGVkUG9pbnRBcmVhKCl7XG4gICAgdmFyIG1hcCA9IFtdXG4gICAgbWFwLnB1c2goJ+ivtOaYjicpO1xuICAgIG1hcC5wdXNoKCcxLiDlrprngrnlsI/ljLrvvJrlhY3otLnphY3pgIHoh7PlsI/ljLrkv6HmiqXnrrHvvJsnKTtcbiAgICBtYXAucHVzaCgnMi4g6aaW5om56K+V54K55oqV6YCB5bCP5Yy677ya5aWl5p6X5riF5Y2O77yI5Lic44CB6KW/77yJ5Yy644CB5ZiJ6bi/6Iqx5Zut77yM6bKI5Lmh5LqM5p2R44CB6bKI5Lmh5LiJ5p2R44CB5ZC06LaK6aKG56eA44CB5qyn6aOO5Y2O5bqt44CB5piO54+g5Z+O5pyb5rmW6IuRJyk7XG4gICBcbiAgICByZXR1cm4gbWFwO1xufVxuXG5leHBvcnQgZnVuY3Rpb24gZ2V0SG9tZURlbGl2ZXJ5KCl7XG4gICAgdmFyIG1hcCA9IFtdXG4gICAgbWFwLnB1c2goJ+ivtOaYjicpO1xuICAgIG1hcC5wdXNoKCcxLiDpgIHkuabkuIrpl6jvvJrmr4815pys5LmmNeWFg++8jOS4jei2szXmnKzmjIk15pys6K6h566X77ybJyk7XG4gICAgbWFwLnB1c2goJzIuIOmAgeS5puS4iumXqOmcgOS7mOi0ueS5i+WQjuaJjeiDvemAgeWIsOeUqOaIt+aMh+WumueahOWcsOWdgOOAguiLpeW3peS9nOS6uuWRmOaJvuWIsOS5puWQju+8jOivpeS5pui/mOacquS7mOi0ue+8jOWwhuiiq+WPlua2iOWAn+mYheOAgicpO1xuXG4gICAgcmV0dXJuIG1hcDtcbn1cbiJdfQ==

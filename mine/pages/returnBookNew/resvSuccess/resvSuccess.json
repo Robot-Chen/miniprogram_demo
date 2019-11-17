@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "预约还书",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

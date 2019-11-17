@@ -1,0 +1,134 @@
+<view class="body">
+    <view bindtap="toPage" class="lining-head-area" data-type="toMyInfo" wx:if="{{!isvip}}">
+        <view class="first">
+            <view class="avatar-new">
+                <open-data class="avatar" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="second">
+                <open-data type="userNickName"></open-data>
+                <text class="userMobile" wx:if="{{userData.userMobile}}">{{userData.userMobile}}</text>
+                <text class="userMobile" wx:if="{{userData.cardNumber}}">{{userData.cardNumber}}</text>
+                <text class="userMobile" wx:if="{{!userData.userMobile&&!userData.cardNumber}}">暂未绑定读者卡</text>
+            </view>
+        </view>
+        <image class="goto-reader" mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/goto_reader.png"></image>
+    </view>
+    <view class="lining-head-area" data-type="toMyInfo" style="background:#FF9058" wx:if="{{isvip}}">
+        <view class="first">
+            <view class="avatar-new">
+                <open-data class="avatar" type="userAvatarUrl"></open-data>
+            </view>
+            <view class="second">
+                <open-data style="padding-left:5px" type="userNickName"></open-data>
+                <view class="third">
+                    <text class="userMobile">{{vipData.equity}}</text>
+                    <text class="userMobile">权益有效期：{{vipData.endTime}}</text>
+                </view>
+            </view>
+            <view>
+                <view bindtap="openjinli" class="avatar-new1">
+                    <image mode="scaleToFill" src="http://img.jieshu.me/htdocs{{vipData.bookJpgs}}" style="display:inline"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="am-modal-show" wx:if="{{openVipModel}}">
+        <view class="am-modal-mask"></view>
+        <view class="am-modal-document">
+            <view class="am-modal">
+                <image class="jinli-icon" mode="scaleToFill" src="https://cdn.jieshu.me/minia/common/vipcard/jinli-head.png"></image>
+                <view class="jinli-title">{{vipData.title}}
+          </view>
+                <view class="container-view">
+                    <text>{{vipData.summary}}</text>
+                    <view bindtap="closejinli" class="certainBtn">我知道了</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lining-content"></view>
+    <view class="out-first">
+        <view bindtap="toPage" data-type="message">
+            <image mode="scaleToFill" src="{{messageCount>0?'https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/message.png':'https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/message_empty.png'}}"></image>
+            <text>我的消息</text>
+        </view>
+        <view bindtap="toPage" data-type="favorite">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/collection.png"></image>
+            <text>我的收藏</text>
+        </view>
+        <view bindtap="toPage" data-type="myCoupon" wx:if="{{true}}">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/coupon.png"></image>
+            <text>我的优惠券</text>
+        </view>
+    </view>
+    <view class="out-second">
+        <view bindtap="toPage" data-type="currentBorrow">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/wexin/images/jieshuMinia/me/my-wdjy.png"></image>
+            <text>当前借阅</text>
+        </view>
+        <view bindtap="toPage" data-type="myOrder" wx:if="{{configData.showOrder}}">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/wexin/images/jieshuMinia/me/my-order.png"></image>
+            <text>我的订单</text>
+        </view>
+        <view bindtap="toPage" data-type="currentPackage">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/wexin/images/jieshuMinia/me/my-packet.png"></image>
+            <text>我的包裹</text>
+        </view>
+        <view bindtap="toPage" data-type="borrowHistory" wx:if="{{configData.showHistory}}">
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/wexin/images/jieshuMinia/me/my-history.png"></image>
+            <text>借阅历史</text>
+        </view>
+    </view>
+    <view class="out-third">
+        <view bindtap="toPage" class="out-third-son" data-type="returnBook" wx:if="{{configData.showYuYue}}">
+            <text>预约还书</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="address">
+            <text>收货地址</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="eCard">
+            <text>我的电子证</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="recommendBook" wx:if="{{configData.showRecommendBook}}">
+            <text>我的荐书</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="arrearage" wx:if="{{configData.showDebt}}">
+            <text>欠费查询</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="help" wx:if="{{configData.showHelp}}">
+            <text>帮助与客服</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="integral" wx:if="{{configData.integralMall}}">
+            <text>积分商城</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="activity" wx:if="{{configData.activityModel}}">
+            <text>活动模块</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+        <view bindtap="toPage" class="out-third-son" data-type="set">
+            <text>设置</text>
+            <image mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/back.png"></image>
+        </view>
+    </view>
+    <view a:if="{{serviceTel||!canIUse||showscene}}" bindtap="makePhone" class="tel" wx:if="{{serviceTel}}">
+        <text class="tel-wen">客服电话</text>
+        <text class="tel-num">{{serviceTel}}</text>
+    </view>
+</view>
+<view class="login-mask" wx:if="{{showWxLogin}}">
+    <view class="modalDlg">
+        <view class="title">授权确认</view>
+        <view class="login-content">"嘉图借书"小程序申请获取您的授权</view>
+        <view class="bottom space-between">
+            <button bindtap="cancalGetUserInfo" hoverClass="none">取消</button>
+            <button bindgetuserinfo="bindGetUserInfo" hoverClass="none" openType="getUserInfo">授权</button>
+        </view>
+    </view>
+</view>

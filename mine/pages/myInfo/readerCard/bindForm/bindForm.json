@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "读者证绑定",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

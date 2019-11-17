@@ -1,0 +1,5 @@
+<view class="toast-box" wx:if="{{showtoastData.isShow}}">
+    <view animation="{{animationtoast}}" class="toast-title">
+   {{showtoastData.title}}
+   </view>
+</view>

@@ -1,0 +1,95 @@
+<view class="page" style="padding-top: {{!query||!query.libcode||query.changeabled==1?'180rpx':'88rpx'}}">
+    <view class="header-main-box">
+        <view class="lib-choose-main-box space-between" wx:if="{{!query||!query.libcode||query.changeabled==1}}">
+            <view class="lib-choose-box start">
+                <image class="lib-local" mode="widthFix" src="{{tempUrl}}"></image>
+                <view bindtap="handleChooseCity" class="lib-text-box start">
+                    <text>{{!libname?'查询中...':libname}}</text>
+                    <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic_down.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="search-scan-view">
+            <view bindtap="toClassify" class="search-box center">
+                <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic_search.png"></image>
+                <text>书名/作者/出版社/ISBN号</text>
+            </view>
+            <image bindtap="scanBorrow" class="sao-view" mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/sao.png" wx:if="{{scanBorrow==1}}"></image>
+            <image bindtap="sao" class="sao-view" mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/sao.png" wx:if="{{scanBorrow==2}}"></image>
+        </view>
+    </view>
+    <view hidden="{{showCityChoose}}">
+        <swiper autoplay bindchange="firstSwiperChange" circular="circular" class="swiper-a" hidden="{{sliders.hidden}}" interval="6000" wx:if="{{sliders.data&&sliders.data.length>0}}">
+            <swiper-item wx:for="{{sliders.data}}" wx:key="{{item.id}}">
+                <view bindtap="sliderClick" data-wpysliderclick-a="{{index}}" style="width:100%;height:100%;background-repeat: no-repeat; background-size: 100% 100%; display: inline-block;background-image: url({{picResource}}{{item.picurl}})"></view>
+            </swiper-item>
+        </swiper>
+        <view class="swiper-dots-box center">
+            <view class="{{firstSwiperIndex===index?'choose':''}}" wx:for="{{sliders.data}}" wx:key="{{item.id}}"></view>
+        </view>
+        <image bindtap="goToGoodBook" class="yp-goodbook" mode="scaleToFill" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/ypcb/yp-goodbook.png" wx:if="{{false}}"></image>
+        <view class="title-box space-between" wx:if="{{likes&&likes.length>0}}">
+            <text>猜你喜欢</text>
+            <view bindtap="changeLikes" class="button-a" wx:if="{{likes&&likes.length>1}}">换一换</view>
+        </view>
+        <view class="scroll-view-box" wx:if="{{likes&&likes.length>0}}">
+            <scroll-view>
+                <view class="scroll-view-sub-box start">
+                    <view bindtap="bookInfo" class="{{index==likes[likesNum].length-1?'last':''}} book-box" data-wpybookinfo-a="{{item}}" wx:for="{{likes[likesNum]}}" wx:key="{{item.id}}">
+                        <image mode="scaleToFill" src="{{item.bookjpgs}}"></image>
+                        <text class="name">{{item.noimgtitle||item.title}}</text>
+                        <text class="author">{{item.author}}</text>
+                    </view>
+                    <view class="op0">1</view>
+                </view>
+            </scroll-view>
+        </view>
+        <block wx:for="{{blTypes}}" wx:key="{{index}}">
+            <view class="book-list-main-box">
+                <view class="title-box no-padding space-between">
+                    <text>{{item.label}}</text>
+                    <view class="button-b start">
+                        <text bindtap="jump_list" data-wpyjump_list-a="{{item.flag}}" data-wpyjump_list-b="{{item.label}}">查看全部</text>
+                        <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic_right.png"></image>
+                    </view>
+                </view>
+                <view class="book-list-box start">
+                    <view bindtap="bookInfo" class="book-box" data-wpybookinfo-a="{{item}}" wx:for="{{item.list}}" wx:key="{{item.id}}">
+                        <image mode="scaleToFill" src="{{item.bookjpgs}}"></image>
+                        <text class="name">{{item.noimgtitle||item.title}}</text>
+                        <text class="author">{{item.author}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="theme-book-list-main-box" hidden="{{sliders5.hidden}}" wx:if="{{index==0}}">
+                <view class="title-box no-padding space-between">
+                    <text>主题书单</text>
+                    <view bindtap="goBookList" class="button-b start" data-wpygobooklist-a="">
+                        <text>查看全部</text>
+                        <image mode="widthFix" src="https://cdn.jieshu.me/minia/wexin/images/ic_right.png"></image>
+                    </view>
+                </view>
+                <view class="theme-book-list-box">
+                    <image bindtap="bookListDetail" data-wpybooklistdetail-a="{{book.id}}" data-wpybooklistdetail-b="{{book.title}}" mode="scaleToFill" src="{{picResource}}{{book.banner}}" wx:for="{{sliders5.data}}" wx:for-item="book" wx:key="{{book.id}}"></image>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="city-choose-box" hidden="{{!showCityChoose}}">
+        <city-list binddetail="binddetail" data="{{cityList}}"></city-list>
+        <view bindtap="goBack" class="back-index" wx:if="{{libname&&libname!='查询中...'}}">返回</view>
+    </view>
+    <view class="popup-main-box center" wx:if="{{showLibChoose}}">
+        <view class="popup-box">
+            <view class="sub-pop title">请选择图书馆</view>
+            <view bindtap="libTapFromPage" class="sub-pop lib-box" data-wpylibtapfrompage-a="{{item.libcode}}" wx:for="{{libs}}" wx:key="{{item.id}}">{{item.libname}}</view>
+            <view bindtap="libTapFromPage" class="sub-pop cancel-box" data-wpylibtapfrompage-a="cancel" wx:if="{{hasLibcode}}">取消</view>
+            <view bindtap="handleChooseCity" class="sub-pop cancel-box" data-h="" wx:if="{{!hasLibcode}}">返回</view>
+        </view>
+    </view>
+</view>
+<view catchtap="closeActivityMask" catchtouchmove="true" class="activity-box" wx:if="{{showActivityMask}}">
+    <image catchtap="activityClick" data-wpyactivityclick-a="{{activity}}" mode="aspectFit" src="{{picResource}}{{activity.picurl}}"></image>
+    <image catchtap="closeActivityMask" data-wpycloseactivitymask-a="" model="aspectFit" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/me/ypcb/register-close.png"></image>
+</view>
+<toast animationData="{{animationData}}" showtoastData="{{showtoastData}}"></toast>

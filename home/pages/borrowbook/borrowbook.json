@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "借书总动员",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

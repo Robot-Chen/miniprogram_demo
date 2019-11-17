@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "主题书单",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}

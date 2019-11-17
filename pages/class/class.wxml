@@ -1,0 +1,40 @@
+<view class="{{hasClickClass==1?'body':'hidden'}}">
+    <view bindtap="to_search" class="header-right-search">
+        <view class="index_search_container">
+            <image class="index_search" mode="widthFix" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/index/index_search.png"></image>
+        </view>
+        <text class="header-font-btn">书名/作者/出版社/ISBN号</text>
+    </view>
+    <view class="classes-view">
+        <text bindtap="books" class="{{currentIndex==index?'click':'noclick'}}" data-currentIndex="{{index}}" wx:for="{{classes}}">{{item.newClassName}}</text>
+        <text class="noclick" wx:if="{{classes||classes.lenght==0}}"></text>
+    </view>
+    <image bindtap="editClass" class="edit-add" mode="widthFix" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/class/edit.png"></image>
+    <scroll-view bindscrolltolower="nextPage" bindscrolltoupper="upper" class="books-view" scrollY="{{true}}" style="height:{{hasClickClass==1?'1120rpx;':'900rpx'}}" wx:if="{{emptyFlag&&emptyFlag==2}}">
+        <view bindtap="bookdetail" class="book-view {{index%3==2?'':'right'}}" data-bookid="{{item.bookid?item.bookid:0}}" data-bookrecno="{{item.bookrecno}}" data-isbn="{{item.isbn}}" data-libcode="{{item.libcode}}" wx:if="{{hasClickClass!=1&&index<6||hasClickClass==1}}" wx:for="{{items}}">
+            <image mode="scaleToFill" src="{{item.bookjpgs}}"></image>
+            <view class="text-title">{{item.title}}</view>
+            <text>{{item.publisher}}</text>
+        </view>
+    </scroll-view>
+    <view class="page-container" wx:if="{{emptyFlag&&emptyFlag==1}}">
+        <view class="empty-view">
+            <image mode="aspectFit" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/common/empty/empty_books.png"></image>
+        </view>
+        <view class="empty-view-title" style="text-align: center;">
+            <text>该分类还没有图书哦</text>
+        </view>
+    </view>
+    <view bindtap="saveHasClickClass" class="new-user-view" wx:if="{{hasClickClass&&hasClickClass!=1}}">
+        <image class="zhidao-image" mode="aspectFit" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/class/zhidao.png"></image>
+        <text>向左拖动查看更多分类,点击编辑专属分类</text>
+    </view>
+    <view bindtap="saveHasClickClass" class="classes-view-new" wx:if="{{hasClickClass&&hasClickClass!=1}}">
+        <text class="noclick-first">全部</text>
+        <text class="noclick">哲学/宗教</text>
+        <text class="noclick">政治/法律</text>
+        <text class="noclick">军事</text>
+        <text class="noclick">经济</text>
+        <image mode="widthFix" src="https://cdn.jieshu.me/minia/alipay/jiatujieshu/images/class/edit.png"></image>
+    </view>
+</view>

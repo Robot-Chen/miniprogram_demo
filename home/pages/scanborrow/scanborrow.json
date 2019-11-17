@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "扫码借书",
+    "usingComponents": {
+        "toast": "/components/toast/toast"
+    }
+}
